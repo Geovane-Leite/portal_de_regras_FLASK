@@ -77,7 +77,8 @@ def pesquisar(consulta):
                     if cont_palavras_encontradas >= 1 and cont_2==1:
                         resultado_text += f"<h4>Parágrafos encontrados: {len(resultados)}</h4>"
                     resultado_text += f"<p>{paragrafo}</p><br/><p>Total Palavras Encontradas: {cont_palavras_encontradas} : {' ; '.join(palavras_encontradas)}</p><br/>"
-                    resultado_text += '_' * 1000 + '\n'
+                    resultado_text += f'<hr style="border: 0,5mm solid gray; width: 100%; height: 100%;>'
+
                 except:
                     #resultado_text += f"Pesquisa {consulta} não encontrada.\n"
                     continue
