@@ -11,8 +11,8 @@ def ler_pdf(nome_arquivo):
     for numero_pagina in range(documento.page_count):
         pagina = documento.load_page(numero_pagina)
         texto_pagina = pagina.get_text()
-        padrao = r'\.\s*\n'
-        texto_pagina = re.sub(padrao, lambda m: f". (Pag. {numero_pagina+1}).\n", texto_pagina)
+        padrao = r'\.\s*\n' # identifica final de cada paragrafo.
+        texto_pagina = re.sub(padrao, lambda m: f". (Pag. {numero_pagina+1}).\n", texto_pagina) # adiciona a pagina ao paragrafo
         texto += texto_pagina
     return texto
 
@@ -48,19 +48,19 @@ def index():
 
 def pesquisar(consulta):
     cont = None
-    diretorio = r'\\10.8.0.12\contas medicas\Ferramentas Python\manuais'
+    diretorio = r'\\Users\contas medicas\manuais_auditoria\manuais' # diretorio pdf
     resultado_text = ""
     consulta = consulta.replace(',', ' ')
     for arquivo in os.listdir(diretorio):
         nome_arquivo = os.path.join(diretorio, arquivo)
-        nome_arquivo_txt = os.path.join(diretorio, arquivo).replace('manuais', 'temp_manuais').replace('.pdf', '.txt')
-        if not os.path.isfile(nome_arquivo_txt):
+        nome_arquivo_txt = os.path.join(diretorio, arquivo).replace('manuais', 'temp_manuais').replace('.pdf', '.txt') # diretorio txt
+        if not os.path.isfile(nome_arquivo_txt): # Abrir PDF caso TXT não exista
             texto_pdf = ler_pdf(nome_arquivo)
             with open(nome_arquivo_txt, 'w', encoding='utf-8') as txt_file:
                 txt_file.write(texto_pdf)
             resultados = encontrar_paragrafos(texto_pdf, consulta)
         else:
-            with open(nome_arquivo_txt, 'r', encoding='utf-8') as txt_file:
+            with open(nome_arquivo_txt, 'r', encoding='utf-8') as txt_file:  # Abrir TXT
                 texto_txt = txt_file.read()
             resultados = encontrar_paragrafos(texto_txt, consulta)
 
@@ -81,7 +81,7 @@ def pesquisar(consulta):
                     continue
     else:
         if not cont:
-            resultado_text += f"<h3>Pesquisa {consulta} não encontrada!<h3>"
+            resultado_text += f"<h3>Pesquisa {consulta} não encontrada!<h3>" 
     return resultado_text
 
 
