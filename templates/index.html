@@ -3,14 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesquisar Regras de Auditoria</title>
+    <style>
+
+        /* Estilo para a imagem */
+        .logo {
+            position: absolute;
+            top: 20px; /* Ajuste conforme necessário */
+            right: 5px; /* Ajuste conforme necessário */
+            width: 180px; /* Ajuste conforme necessário */
+            height: auto; /* Para manter a proporção da imagem */
+        }
+        /* Estilo para o cabeçalho */
+        h1 {
+            color: #e9eeea; /* Cor verde */
+            background-color: #08741a; /* Cor de fundo verde */
+            font-size: 2.5rem; /* Tamanho da fonte */
+            font-weight: bold; /* Texto em negrito */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+            margin-bottom: 20px; /* Espaçamento inferior */
+            top: 20px; /* Distância do topo */
+            left: 20px; /* Distância da esquerda */
+            font-family: Arial, sans-serif; /* Fonte */
+
+        }
+        /* Estilo para a caixa de pesquisa */
+        input[type="text"] {
+            width: 300px; /* Largura da caixa de pesquisa */
+            padding: 10px; /* Espaçamento interno */
+            font-size: 1.2rem; /* Tamanho da fonte */
+            border: 1px solid #ccc; /* Borda cinza */
+            border-radius: 5px; /* Bordas arredondadas */
+            margin-right: 10px; /* Espaçamento à direita */
+            
+            
+        }
+        /* Estilo para o botão de pesquisa */
+        button[type="submit"] {
+            padding: 10px 20px; /* Espaçamento interno */
+            font-size: 1.2rem; /* Tamanho da fonte */
+            background-color: #0a571a; /* Cor de fundo verde */
+            color: #fff; /* Cor do texto branco */
+            border: none; /* Sem borda */
+            border-radius: 5px; /* Bordas arredondadas */
+            cursor: pointer; /* Cursor de ponteiro ao passar por cima */
+        }
+        /* Estilo para o botão de pesquisa ao passar o mouse */
+        button[type="submit"]:hover {
+            background-color: #0a7d1c; /* Cor de fundo verde mais escura */
+            
+        }
+        /* Estilo para o resultado */
+        .resultado {
+            font-family: Arial, sans-serif; /* Fonte */
+        }
+    </style>
 </head>
 <body>
+    <!-- Imagem da logo -->
+    <img class="logo" src="https://unimedpalmas.coop.br/public/img/logo.png" alt="Logo">
+
+    <!-- Título no topo da página -->
     <h1>Pesquisar Regras de Auditoria</h1>
+    <br></br><br></br>
+    <!-- Formulário de pesquisa -->
     <form method="POST">
         <input type="text" name="consulta" placeholder="Digite sua consulta">
         <button type="submit">Pesquisar</button>
     </form>
+
+    <!-- Resultados da pesquisa serão exibidos aqui -->
     <div>
         {{ resultado_text | safe }}
     </div>
