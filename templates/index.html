@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Regras de Auditoria</title>
+</head>
+<body>
+    <h1>Pesquisar Regras de Auditoria</h1>
+    <form method="POST">
+        <input type="text" name="consulta" placeholder="Digite sua consulta">
+        <button type="submit">Pesquisar</button>
+    </form>
+    <div>
+        {{ resultado_text | safe }}
+    </div>
+</body>
+</html>
