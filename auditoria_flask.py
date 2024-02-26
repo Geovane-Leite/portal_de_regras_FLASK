@@ -68,7 +68,7 @@ def pesquisar(consulta):
         # Verifica se há resultados
         if resultados and resultados != ["Nenhum parágrafo encontrado."]:
             cont = 'encontrou'
-            resultado_text += f'<h3 style="background-color: #00995e; color: white; font-family: Arial, sans-serif;">{arquivo}</h3>'
+            resultado_text += f'<h3 style="background-color: #00995e; color: white; font-family: Arial, sans-serif;"><a href="{nome_arquivo}" target="_blank" style="text-decoration: none; color: white;">{arquivo}</a></h3>'
             resultados_ordenados = sorted(resultados, key=lambda x: x[1], reverse=True)
             cont_2 = 0
             for resultado in resultados_ordenados:
