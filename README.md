@@ -37,11 +37,3 @@ Certifique-se de que os documentos PDF estejam presentes no diretório especific
 O diretório temp_manuais foi criado para otimizar a busca, funcionando como uma espécie de cache.
 Isso significa que não é necessário ler todo o PDF novamente a cada pesquisa.
 Esse cache é usado para armazenar os textos extraídos dos PDFs, o que ajuda a otimizar a velocidade da busca.
-
-## Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork deste repositório, implementar melhorias e enviar um pull request.
-
-## Licença
-
-Este projeto é licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
