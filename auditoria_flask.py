@@ -72,7 +72,6 @@ def pesquisar(consulta):
             cont_2 = 0
             for resultado in resultados_ordenados:
                 cont_2 +=1
-                print(cont_2)
                 try:
                     paragrafo, cont_palavras_encontradas, palavras_encontradas = resultado
                     if cont_palavras_encontradas >= 1 and cont_2==1:
