@@ -68,7 +68,7 @@ def pesquisar(consulta):
         # Verifica se há resultados
         if resultados and resultados != ["Nenhum parágrafo encontrado."]:
             cont = 'encontrou'
-            resultado_text += f'<h3 style="background-color: green; color: white; font-family: Arial, sans-serif;">{arquivo}</h3>'
+            resultado_text += f'<h3 style="background-color: #00995e; color: white; font-family: Arial, sans-serif;">{arquivo}</h3>'
             resultados_ordenados = sorted(resultados, key=lambda x: x[1], reverse=True)
             cont_2 = 0
             for resultado in resultados_ordenados:
@@ -77,7 +77,7 @@ def pesquisar(consulta):
                     paragrafo, cont_palavras_encontradas, palavras_encontradas = resultado
 
                     if cont_palavras_encontradas >= 1 and cont_2==1:
-                        resultado_text += f"<h4 style='font-family: Arial, sans-serif;'><span style='background-color: rgba(144, 238, 144, 0.5); color: green;'>{'Parágrafo encontrado' if len(resultados) == 1 else 'Parágrafos encontrados'}: {len(resultados)}</span></h4>"
+                        resultado_text += f"<h4 style='font-family: Arial, sans-serif;'><span style='background-color: rgba(144, 238, 144, 0.5); color: #00995e;'>{'Parágrafo encontrado' if len(resultados) == 1 else 'Parágrafos encontrados'}: {len(resultados)}</span></h4>"
                     resultado_text += '<div style="background-color: lightgray; box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); padding: 10px;">'
                     resultado_text += f"<p style='font-family: Arial, sans-serif;'>{paragrafo}</p><p style='font-family: Arial, sans-serif;'>Total Palavras Encontradas: {cont_palavras_encontradas} : {' ; '.join(palavras_encontradas)}</p>"
                     resultado_text += '</div>'
@@ -89,7 +89,7 @@ def pesquisar(consulta):
                     continue
     else:
         if not cont:
-            resultado_text += f'<h3 style="background-color: red; color: white; font-family: Arial, sans-serif;">Pesquisa {consulta} não encontrada!</h3>'
+            resultado_text += f'<h3 style="background-color: red; color: #00995e; font-family: Arial, sans-serif;">Pesquisa {consulta} não encontrada!</h3>'
     return resultado_text
 
 
