@@ -48,7 +48,7 @@ def index():
 
 def pesquisar(consulta):
     cont = None
-    diretorio = r'\\Users\contas medicas\manuais_auditoria\manuais' # diretorio pdf
+    diretorio = r'\\projeto\docs\\manuais' # diretorio pdf
     resultado_text = ""
     consulta = consulta.replace(',', ' ')
     for arquivo in os.listdir(diretorio):
