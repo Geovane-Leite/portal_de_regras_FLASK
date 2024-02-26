@@ -13,7 +13,6 @@ juntamente com informações adicionais.
 
 - **Flask:** Um framework de aplicativo da web em Python.
 - **PyMuPDF (fitz):** Uma biblioteca Python para trabalhar com documentos PDF.
-- **HTML/CSS:** Para a interface do usuário.
 
 ## Instruções de Uso
 
