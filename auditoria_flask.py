@@ -69,12 +69,15 @@ def pesquisar(consulta):
             cont = 'encontrou'
             resultado_text += f'<h3>Nome do Arquivo: {arquivo}</h3>'
             resultados_ordenados = sorted(resultados, key=lambda x: x[1], reverse=True)
+            cont_2 = 0
             for resultado in resultados_ordenados:
+                cont_2 +=1
+                print(cont_2)
                 try:
                     paragrafo, cont_palavras_encontradas, palavras_encontradas = resultado
-                    if cont_palavras_encontradas >= 1 and resultado[0]:
-                        resultado_text += f"<p>Parágrafos encontrados: {len(resultados)}<br>"
-                    resultado_text += f"<p>{paragrafo}<br> <p> Total Palavras Encontrada: {cont_palavras_encontradas} : {' ; '.join(palavras_encontradas)}<br>"
+                    if cont_palavras_encontradas >= 1 and cont_2==1:
+                        resultado_text += f"<h4>Parágrafos encontrados: {len(resultados)}</h4>"
+                    resultado_text += f"<p>{paragrafo}</p><br/><p>Total Palavras Encontradas: {cont_palavras_encontradas} : {' ; '.join(palavras_encontradas)}</p><br/>"
                     resultado_text += '_' * 1000 + '\n'
                 except:
                     #resultado_text += f"Pesquisa {consulta} não encontrada.\n"
